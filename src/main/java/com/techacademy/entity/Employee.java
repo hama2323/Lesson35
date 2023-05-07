@@ -1,9 +1,9 @@
 package com.techacademy.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,9 +30,9 @@ public class Employee {
 
     /** 登録日時 */
     @Column(nullable = false)
-    private Integer created_at;
+    private LocalDateTime created_at;
 
     /** 更新日時 */
     @Column(nullable = false)
-    private Integer updated_at;
+    private LocalDateTime updated_at;
 }

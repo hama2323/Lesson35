@@ -4,7 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 
 import lombok.Data;
 
@@ -12,10 +15,9 @@ import lombok.Data;
 @Entity
 @Table(name = "authentication")
 public class Authentication {
-    }
 
     /** 主キー。自動生成 */
-    @Code
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 20, nullable = false)
     private String code;
