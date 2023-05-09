@@ -2,9 +2,9 @@ package com.techacademy.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -18,7 +18,6 @@ public class Authentication {
 
     /** 主キー。自動生成 */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 20, nullable = false)
     private String code;
 
@@ -31,7 +30,8 @@ public class Authentication {
     private Integer role;
 
     /** 従業員テーブルのID。null不許可 */
-    @Column(length = 50, nullable = false)
-    private String employee_id;
+    @OneToOne
+    @JoinColumn(name="employee_id", referencedColumnName="id")
+    private Employee employee;
 
 }
